@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "MUHAMMAD DANIAL HAIKAL BIN ABDULLAH",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "chip-gps-neo6m", "id": "chip1", "top": 154.62, "left": 168, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 23.02, "left": -93.68, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -1.3, "left": 163, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "chip1:VCC", "red", [ "v0" ] ],
+    [ "chip1:GND", "esp:GND.1", "black", [ "h-38.4", "v-26.08" ] ],
+    [ "esp:D15", "chip1:RX", "green", [ "h0" ] ],
+    [ "imu1:VCC", "esp:3V3", "violet", [ "v134.4", "h0.08", "v76.8", "h134.4", "v-86.4" ] ],
+    [ "imu1:GND", "esp:GND.1", "black", [ "v163.2", "h0.08", "v19.2", "h153.6", "v-67.2" ] ],
+    [ "imu1:SCL", "esp:D22", "green", [ "v-38.4", "h153.68", "v38.4" ] ],
+    [ "esp:D21", "imu1:SDA", "green", [ "h23.51", "v-79.52", "h-172.8", "v48" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "v28.8", "h-87.2", "v38.4" ] ],
+    [ "esp:VP", "pot1:SIG", "yellow", [ "h-14.4", "v-69.92", "h153.6", "v124.8", "h48" ] ],
+    [ "chip1:TX", "esp:16", "cyan", [ "h11.41", "v-38.4", "h-163.2", "v-9.6" ] ],
+    [ "chip1:TX", "esp:RX2", "cyan", [ "h21.01", "v-48", "h-163.2" ] ]
+  ],
+  "dependencies": {}
+}

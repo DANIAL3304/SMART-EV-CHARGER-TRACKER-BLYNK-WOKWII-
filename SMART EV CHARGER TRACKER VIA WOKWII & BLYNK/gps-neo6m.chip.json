@@ -1,0 +1,11 @@
+{
+  "name": "gps-neo6m",
+  "author": "MUHAMMAD DANIAL HAIKAL BIN ABDULLAH",
+  "pins": [
+    "VCC",
+    "GND",
+    "RX",
+    "TX"
+  ],
+  "controls": []
+}
